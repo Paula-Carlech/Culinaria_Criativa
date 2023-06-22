@@ -1,0 +1,11 @@
+.texto {
+    text-align: justify;
+}
+
+.nome {
+    display: inline-block;
+}
+
+.quantidade_receita {
+    align-self: flex-end;
+}
