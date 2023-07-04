@@ -12,15 +12,15 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img class="logo" src="assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
+              <a class="navbar-brand" href="../index.html"><img class="logo" src="../assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link" href="index.html">Receitas</a>
-                  <a class="nav-link" href="minhasReceitas.html">Minhas Receitas</a>
-                  <a class="nav-link" href="sobre.html">Sobre</a>
+                  <a class="nav-link" aria-current="page" href="../Autenticacao/autenticar_receita.php">Receitas</a>
+                  <a class="nav-link" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
+                  <a class="nav-link" href="../Autenticacao/autenticar_sobre.php">Sobre</a>
                   <a class="nav-link active" aria-current="page" href="conta.html">Conta</a>
                 </div>
               </div>
@@ -39,16 +39,17 @@
 
         <p class="text-uppercase fs-4 nome">Nome Sobrenome</p>
 
-        <form>
+        <form action="../Conectar/login.php" method="post">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="USERemail" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="USERemail" name="USERemail" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="USERpwd">
+            <input type="password" class="form-control" id="USERpwd" name="USERpwd">
           </div>
           <button type="submit" class="btn btn-primary">Alterar</button>
+          <input type="submit" class="btn btn-primary" name="login" value="Login">
         </form>
       </div>
 
