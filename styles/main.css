@@ -19,6 +19,10 @@ html, body {
     border: 0;
 }
 
+.btn:hover {
+    background-color:  rgba(255, 0, 0, 0.815) !important;
+}
+
 .btn_sem_cor {
     background-color: transparent !important;
 }
