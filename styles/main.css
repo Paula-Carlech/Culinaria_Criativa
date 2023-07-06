@@ -35,6 +35,10 @@ html, body {
     color: yellow !important;
 }
 
+.link_add {
+    color:  rgba(255, 0, 0, 0.705) !important;
+}
+
 .active {
     color: yellow !important;
 }

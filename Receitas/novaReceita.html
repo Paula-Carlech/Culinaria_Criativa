@@ -4,28 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Receita</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="../assets/images/LOGO.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="logo" src="../assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="../Autenticacao/autenticar_receita.php">Receitas</a>
+              <a class="nav-link active" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
+              <a class="nav-link" href="../sobre.html">Sobre</a>
+              <a class="nav-link" href="../Conta/conta.html">Conta</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+</header>
 <body>
-    <h1>Nova Receita</h1>
+    <h1 class="container my-3">Nova Receita</h1>
 
-    <form id="form1" action="processar_formulario.php" method="POST">
-        <label for="nomeReceita">Nome da Receita:</label>
-        <input type="text" id="nomeReceita" name="nomeReceita">
+    <form class="container m-auto form-control p-3" id="form1" action="processar_formulario.php" method="POST">
+        <label for="nomeReceita">Nome da Receita:</label> <br>
+        <input class="mb-3" type="text" id="nomeReceita" name="nomeReceita">
 
         <!-- Campos dos Novos Ingredientes -->
         <div id="novosIngredientes">
             <div class="novoIngrediente">
-                <input type="text" name="quantidade[]" placeholder="Quantidade">
-                <input type="text" name="unidade[]" placeholder="Unidade">
-                <input type="text" name="ingrediente[]" placeholder="Ingrediente">
-                <button type="button" class="btnRemoverIngrediente">Remover</button>
+                <input class="mb-3" type="text" name="quantidade[]" placeholder="Quantidade">
+                <input class="mb-3" type="text" name="unidade[]" placeholder="Unidade">
+                <input  class="mb-3" type="text" name="ingrediente[]" placeholder="Ingrediente">
+                <button class="btn mx-2 btnRemoverIngrediente" type="button">Remover</button>
             </div>
         </div>
 
-        <button type="button" id="adicionarIngrediente" class="btn">Adicionar Ingrediente</button>
+        <button type="button" id="adicionarIngrediente" class="btn my-5">Adicionar Ingrediente</button>
 
-        <button type="submit" class="btn">Enviar</button>
+        <button type="submit" class="btn my-3">Enviar</button>
     </form>
 
     <script src="script.js"></script>

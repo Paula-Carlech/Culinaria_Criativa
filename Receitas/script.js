@@ -6,10 +6,10 @@ btnAdicionar.addEventListener('click', function() {
     const novoIngrediente = document.createElement('div');
     novoIngrediente.classList.add('novoIngrediente');
     novoIngrediente.innerHTML = `
-        <input type="text" name="quantidade[]" placeholder="Quantidade">
-        <input type="text" name="unidade[]" placeholder="Unidade">
-        <input type="text" name="ingrediente[]" placeholder="Ingrediente">
-        <button type="button" class="btnRemoverIngrediente">Remover</button>
+        <input class="mb-3" type="text" name="quantidade[]" placeholder="Quantidade">
+        <input class="mb-3" type="text" name="unidade[]" placeholder="Unidade">
+        <input  class="mb-3" type="text" name="ingrediente[]" placeholder="Ingrediente">
+        <button class="btn mx-2 btnRemoverIngrediente" type="button">Remover</button>
     `;
     containerIngredientes.appendChild(novoIngrediente);
 });
