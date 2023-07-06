@@ -39,6 +39,5 @@
         exit;
     }
 
-    // Se não houver envio de formulário, exibir o formulário para o usuário preencher
-    // ...
+    
 ?>
