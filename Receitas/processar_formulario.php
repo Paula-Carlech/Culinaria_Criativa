@@ -18,7 +18,7 @@
         $usuario_ult_nome = $_SESSION['unome'];
 
         // Inserir na tabela
-        $sql_processamento_receita = "INSERT INTO cc_receitas(Nome_Receita, Coz_Receita, id_Coz_Receita, Ava_Receita) VALUES ('$nomeReceita', '" . $usuario_pri_nome . " " . $usuario_ult_nome . "', $usuario_id,0)";
+        $sql_processamento_receita = "INSERT INTO cc_receitas(Nome_Receita, Coz_Receita, id_Coz_Receita) VALUES ('$nomeReceita', '" . $usuario_pri_nome . " " . $usuario_ult_nome . "', $usuario_id)";
         $resultado_proc_rec = mysqli_query($conn,$sql_processamento_receita);
         $idReceita = mysqli_insert_id($conn);
         $_SESSION['idreceita'] = $idReceita;
@@ -32,7 +32,7 @@
             $quantidade = $quantidades[$i];
             $unidade = $unidades[$i];
             $ingrediente = $ingredientes[$i];
-            $sql_processamento_ingrediente = "INSERT INTO cc_ingredientes(Nome_Ingrediente, Q_Ingrediente, Uni_Ingrediente, id_receita_fk) VALUES ('$ingrediente', $quantidade, '$unidade', $idReceita)";
+            $sql_processamento_ingrediente = "INSERT INTO cc_ingredientes(Nome_Ingrediente, Q_Ingrediente, Uni_Ingrediente, Id_Receita) VALUES ('$ingrediente', $quantidade, '$unidade', $idReceita)";
             $resultado_insert_ingred_quant_uni = mysqli_query($conn,$sql_processamento_ingrediente);
         }
         header('Location: ../Receitas/criar_Receita.php');
