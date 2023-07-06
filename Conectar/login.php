@@ -1,11 +1,13 @@
 <?php 
     include('conectar.php');
+    
     //variavel que verifica se a autenticação foi realizada
     $usuario_autenticado = false;
 
     session_start();
 
     //Variavel que verifica se a autenticação foi realizada
+    
     $usuario_autenticado = false;
     $usuario_id = null;
     $usuario_senha = null;
@@ -29,8 +31,9 @@
             $sql2 = "SELECT Primeiro_Nome_Usuario, Ultimo_Nome_Usuario FROM cc_priv_usuario WHERE id_usuario_usuario = '$usuario_id'";
             $resultado = mysqli_query($conn, $sql2);
             $linha = mysqli_fetch_assoc($resultado);
-            $_SESSION['nome'] = $linha['Primeiro_Nome_Usuario'];               
-            header('Location: ../minhasReceitas.html');
+            $_SESSION['pnome'] = $linha['Primeiro_Nome_Usuario'];             
+            $_SESSION['unome'] = $linha['Ultimo_Nome_Usuario'];
+            header('Location: ../Receitas/minhasReceitas.html');
             exit();
         }
     }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Receita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Nova Receita</h1>
+
+    <form id="form1" action="processar_formulario.php" method="POST">
+        <label for="nomeReceita">Nome da Receita:</label>
+        <input type="text" id="nomeReceita" name="nomeReceita">
+
+        <!-- Campos dos Novos Ingredientes -->
+        <div id="novosIngredientes">
+            <div class="novoIngrediente">
+                <input type="text" name="quantidade[]" placeholder="Quantidade">
+                <input type="text" name="unidade[]" placeholder="Unidade">
+                <input type="text" name="ingrediente[]" placeholder="Ingrediente">
+                <button type="button" class="btnRemoverIngrediente">Remover</button>
+            </div>
+        </div>
+
+        <button type="button" id="adicionarIngrediente" class="btn">Adicionar Ingrediente</button>
+
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
