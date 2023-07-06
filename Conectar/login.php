@@ -18,7 +18,7 @@
     $temp_user_senha = $_POST['USERpwd'];
     $valida_senha = password_hash($temp_user_senha, PASSWORD_DEFAULT);
     
-    $sql1 = "SELECT id_Usuario, Email_Usuario, Senha_Usuario FROM cc_usuario";
+    $sql1 = "SELECT id_Usuario, Email_Usuario, Senha_Usuario FROM cc_usuarios";
     $result = mysqli_query($conn,$sql1);
     
     while ($row = mysqli_fetch_assoc($result)){
