@@ -13,7 +13,7 @@
     $hash_nusuari_senha = password_hash($nusuari_senha, PASSWORD_DEFAULT);
     $hash_nusuari_ani = password_hash($nusuari_ani, PASSWORD_DEFAULT);
 
-    $sql_nuser = "INSERT INTO cc_usuario(Primeiro_Nome_Usuario,Ultimo_Nome_Usuario,Senha_Usuario,Email_Usuario,Aniversario_Usuario) VALUES ($hash_nusuari_pnome,$hash_nusuari_unome,$hash_nusuari_senha,$hash_nusuari_email,$hash_nusuari_ani)";
+    $sql_nuser = "INSERT INTO cc_usuarios(Primeiro_Nome_Usuario,Ultimo_Nome_Usuario,Senha_Usuario,Email_Usuario,Aniversario_Usuario) VALUES ('$hash_nusuari_pnome','$hash_nusuari_unome','$hash_nusuari_senha','$hash_nusuari_email','$hash_nusuari_ani')";
     $resultado_insert_nuser = mysqli_query($conn,$sql_nuser);
 
 ?>
