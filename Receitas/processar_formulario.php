@@ -42,7 +42,7 @@
         }
         echo "<script>alert('Receita cadastrada com sucesso!');</script>";
 
-        header('Location: ../Receitas/criar_Receita.php');
+        header('Location: ../Receitas/minhasReceitas.php');
 
     //}
 

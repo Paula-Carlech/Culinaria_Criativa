@@ -40,5 +40,5 @@
     fwrite($pag, $conteudoHTML);
 
     fclose($pag);
-    header("Location: ./minhasReceitas.html");    
+    header("Location: ./minhasReceitas.php");    
 ?>

@@ -22,9 +22,7 @@ function IQU ($idReceitaIQU){
         /*for ($i = 0; $i < count($ingredientes); $i++) {
             $quantidade = $quantidades[$i];
             $unidade = $unidades[$i];
-            $ingrediente = $ingredientes[$i];
-    
-            
+            $ingrediente = $ingredientes[$i];  
         }*/
     }
 }

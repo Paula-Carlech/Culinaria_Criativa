@@ -27,7 +27,7 @@
             $_SESSION['id'] = $row['Id_Usuario'];                           
             $_SESSION['pnome'] = $row['Primeiro_Nome_Usuario'];             
             $_SESSION['unome'] = $row['Ultimo_Nome_Usuario'];
-            header('Location: ../Receitas/minhasReceitas.html');
+            header('Location: ../Receitas/minhasReceitas.php');
             exit();
         }else{
             echo $valida_usuario;
