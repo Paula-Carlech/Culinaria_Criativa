@@ -1,12 +1,4 @@
-<?php
-include('../Conectar/conectar.php');
 
-if (isset($_POST['nomeReceita'])) {
-    $nomeReceita = $_POST['nomeReceita'];
-    $sql_pesquisa_ureceita = "SELECT * FROM cc_receitas WHERE Nome_Receita LIKE '%$nomeReceita%'";
-    $result = mysqli_query($conn, $sql_pesquisa_ureceita);
-}
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,7 +19,7 @@ if (isset($_POST['nomeReceita'])) {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="Autenticacao/autenticar_receita.php">Receitas</a>
+                    <a class="nav-link active" aria-current="page" href="../Autenticacao/autenticar_receita.php">Receitas</a>
                     <a class="nav-link" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
                     <a class="nav-link" href="../sobre.html">Sobre</a>
                     <a class="nav-link" href="../Conta/conta.html">Conta</a>
@@ -47,6 +39,15 @@ if (isset($_POST['nomeReceita'])) {
             <button type="submit" class="btn">Pesquisar</button>
         </form>
 
+        <?php
+            include('../Conectar/conectar.php');
+
+            if (isset($_POST['nomeReceita'])) {
+                $nomeReceita = $_POST['nomeReceita'];
+                $sql_pesquisa_ureceita = "SELECT * FROM cc_receitas WHERE Nome_Receita LIKE '%$nomeReceita%'";
+                $result = mysqli_query($conn, $sql_pesquisa_ureceita);
+            }
+        ?>
         <?php
         if (isset($result) && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
