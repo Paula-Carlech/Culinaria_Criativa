@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+include('config.php');
 
 
 // Verifica se houve erro na conexão

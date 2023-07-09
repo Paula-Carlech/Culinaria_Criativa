@@ -19,8 +19,8 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link" href="../Autenticacao/autenticar_receitas.php">Receitas</a>
-                  <a class="nav-link active" aria-current="page" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
+                  <a class="nav-link" href="../index.html">Receitas</a>
+                  <a class="nav-link active" aria-current="page" href="../Receitas/minhasReceitas.html">Minhas Receitas</a>
                   <a class="nav-link" href="../sobre.html">Sobre</a>
                   <a class="nav-link" href="../Conta/conta.html">Conta</a>
                   <a class="nav-link" href="../Conectar/logout.php">Logout</a>
@@ -31,34 +31,41 @@
     </header>
 
     <main>
+      
       <h1 class="m-4 mb-4 text-center">Minhas Receitas</h1>
 
-      <div class="d-flex justify-content-end mx-5" style="font-size: 1.2em;">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 link_add d-flex align-items-center" href="./novaReceita.html">
-          <i class="bi bi-file-plus-fill" style="font-size: 1.5em;"></i>
-          Adicionar Receita
-        </a>
-      </div>
-      <div class="d-flex justify-content-end mx-5" style="font-size: 1.2em;">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 link_add d-flex align-items-center" href="./excluirReceita.php">
-          <i class="bi bi-file-plus-fill" style="font-size: 1.5em;"></i>
-          Excluir Receita
-        </a>
-      </div>
+      
        <div class="row row-cols-1 row-cols-md-3 m-3 row-gap-3">
-        
-        <!-- <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
-          <div class="col">
-            <div class="card">
-              <img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">
-              <div class="card-body">
-                <h5 class="card-title text-center">Nome da receita</h5>
-              </div>
-            </div>
-          </div>
-        </a>
+      
+       <?php 
+          session_start();
+          include('../Conectar/conectar.php');
+          include('../var/funcoes.php');
+          $id = $_SESSION['id'];
+          //Busca as informações do usuário no banco de dados e armazenas em variáveis:
+            $sql = "SELECT * FROM cc_receitas WHERE id_Coz_Receita='$id'";
+            $result = mysqli_query($conn,$sql);
+            if (mysqli_num_rows($result) > 0) {
+              while ($linha = mysqli_fetch_assoc($result)) {
+                  echo '<a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">';
+                  echo '<div class="col">';
+                  echo '<div class="card">';
+                  echo '<img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">';
+                  echo '<div class="card-body">';
+                  echo '<h5 class="card-title text-center">' . $linha['Nome_Receita'] . '</h5>';
+                  echo '</div>';
+                  echo '</div>';
+                  echo '</div>';
+                  echo '</a>';
+              }
+          }
+          
+          
+          
+        ?>
 
-       <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+        
+       <!-- <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
           <div class="col">
             <div class="card">
               <img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">
