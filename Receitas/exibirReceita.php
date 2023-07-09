@@ -33,6 +33,8 @@ if ($result->num_rows > 0) {
         echo '      </div>';
         echo '      <div class="modal-footer">';
         echo '        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>';
+        echo '        <button type="button" class="btn btn-secondary">Editar</button>';
+        echo '        <button type="button" class="btn btn-secondary">Deletar</button>';
         echo '      </div>';
         echo '    </div>';
         echo '  </div>';

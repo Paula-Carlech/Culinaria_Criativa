@@ -101,6 +101,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-secondary">Editar</button>
+            <button type="button" class="btn btn-secondary">Deletar</button>
           </div>
         </div>
       </div>
@@ -135,11 +137,13 @@
               Montagem <br>
               4. Molhe os biscoito na mistura de café e forre completamente o fundo do recipiente onde o doce será servido com eles; <br>
               5. Despeje uma camada de creme sabayon e, por cima, outra camada de biscoitos e assim sucessivamente até o creme acabar; <br>
-              6. O doce deve ir para a geladeira e ficar por 24 horas antes de ser servido;
+              6. O doce deve ir para a geladeira e ficar por 24 horas antes de ser servido; <br>
               7. Sirva o doce com chocolate em pó por cima.</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-secondary">Editar</button>
+            <button type="button" class="btn btn-secondary">Deletar</button>
           </div>
         </div>
       </div>
@@ -171,6 +175,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-secondary">Editar</button>
+            <button type="button" class="btn btn-secondary">Deletar</button>
           </div>
         </div>
       </div>
