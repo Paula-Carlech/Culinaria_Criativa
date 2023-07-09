@@ -14,9 +14,9 @@ function IQU ($idReceitaIQU){
     if (mysqli_num_rows($resultado) > 0) {
         // Percorrer os resultados e preencher os vetores
         while ($row = mysqli_fetch_assoc($resultado)) {
-            $ingrediente = $row['ingrediente'];
-            $quantidade = $row['quantidade'];
-            $unidade = $row['unidade'];
+            $ingrediente = $row['Nome_Ingrediente'];
+            $quantidade = $row['Q_Ingrediente'];
+            $unidade = $row['Uni_Ingrediente'];
             echo '<li>' . $quantidade . ' ' . $unidade . ' de ' . $ingrediente . '</li>';
         }
         /*for ($i = 0; $i < count($ingredientes); $i++) {
