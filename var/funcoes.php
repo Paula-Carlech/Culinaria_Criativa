@@ -1,6 +1,7 @@
 <?php
+include('ingredientesPesq.php');
 function exibirModal($titulo, $id_Receita) {
-    include('ingredientesPesq.php');
+    
     // Cabeçalho do modal
     echo '<div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">';
     echo '<div class="modal-dialog">';
@@ -17,13 +18,7 @@ function exibirModal($titulo, $id_Receita) {
 
     // Exibir os ingredientes
     echo '<ul class="texto">';
-    for ($i = 0; $i < count($ingredientes); $i++) {
-        $quantidade = $quantidades[$i];
-        $unidade = $unidades[$i];
-        $ingrediente = $ingredientes[$i];
-
-        echo '<li>' . $quantidade . ' ' . $unidade . ' de ' . $ingrediente . '</li>';
-    }
+    IQU($id_Receita);
     echo '</ul>';
 
     // Modo de preparo

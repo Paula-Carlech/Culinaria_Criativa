@@ -43,21 +43,11 @@
           include('../var/funcoes.php');
           $id = $_SESSION['id'];
           //Busca as informações do usuário no banco de dados e armazenas em variáveis:
-            $sql = "SELECT * FROM cc_receitas WHERE id_Coz_Receita='$id'";
+            $sql = "SELECT * FROM cc_receitas WHERE id_Coz_Receita = $id";
             $result = mysqli_query($conn,$sql);
             if (mysqli_num_rows($result) > 0) {
               while ($linha = mysqli_fetch_assoc($result)) {
-                  echo '<a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">';
-                  echo '<div class="col">';
-                  echo '<div class="card">';
-                  echo '<img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">';
-                  echo '<div class="card-body">';
-                  echo '<h5 class="card-title text-center">' . $linha['Nome_Receita'] . '</h5>';
-                  
-                  echo '</div>';
-                  echo '</div>';
-                  echo '</div>';
-                  echo '</a>';
+                exibirModal($linha['Nome_Receita'],$id);
               }
           }               
         ?>
