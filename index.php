@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img class="logo" src="assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
+              <a class="navbar-brand" href="index.php"><img class="logo" src="assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -44,7 +44,6 @@
         </div>
     </form>
     
-
       <div class="row row-cols-1 row-cols-md-3 m-3 row-gap-3">
 
           <div class="col btn btn_sem_cor" data-bs-toggle="modal" data-bs-target="#modal-1">
@@ -177,9 +176,14 @@
       </div>
     </div>
 
+    <!-- Adicionar Modal dinamicamente -->
+    <?php 
+      include 'Receitas/exibirReceita.php'; 
+    ?>
+
     <script 
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-  </script>
+    </script>
 
 </body>
 </html>
