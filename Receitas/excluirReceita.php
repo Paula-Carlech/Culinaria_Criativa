@@ -53,15 +53,13 @@
                   echo '<img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">';
                   echo '<div class="card-body">';
                   echo '<h5 class="card-title text-center">' . $linha['Nome_Receita'] . '</h5>';
+                  
                   echo '</div>';
                   echo '</div>';
                   echo '</div>';
                   echo '</a>';
               }
-          }
-          
-          
-          
+          }               
         ?>
 
         

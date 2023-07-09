@@ -1,6 +1,5 @@
 <?php
 include('../Conectar/conectar.php');
-session_start();
 $id = $_SESSION['id'];
 // Realizar a pesquisa em banco de dados para obter os ingredientes
 $sql = "SELECT Q_Ingrediente, Uni_Ingrediente, Nome_Ingrediente FROM cc_ingredientes where Id_Receita = '$id'";
