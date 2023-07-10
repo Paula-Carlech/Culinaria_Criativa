@@ -57,20 +57,21 @@
         $linha = mysqli_fetch_assoc($result_select_u_rec);
         if(mysqli_num_rows($result_select_u_rec)>0){
           while($linha = mysqli_fetch_assoc($result_select_u_rec)){
-            echo'<div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            $id_receita = $linha['id_Receitas'];
+            ?>
+            <div class="modal fade" id="modal-<?php echo $id_receita; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">' . $linha['Nome_Receita'].'</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $linha['Nome_Receita']?></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body m-auto text-justify ">
-                    <img class="rounded img-modal w-100" src="assets/images/foto-salgada.png" alt="Foto da receita.">
+                    <img class="rounded img-modal w-100" src="../assets/images/foto-salgada.png" alt="Foto da receita.">
                     <h3>Ingredientes</h3>
                     <p class="texto">
                       <?php
-                        $id_receitas = '. $linha['id_Receitas'] ;
-                        echo 'IQU($id_receitas);
+                        IQU($id_receita);
                       ?>  
                     </p>
                       <h3>Modo de Preparo</h3>
@@ -82,7 +83,12 @@
                   </div>
                 </div>
               </div>
-            </div>';
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<?php echo $id_receita; ?>">
+              Abrir Modal
+            </button>
+
+            <?php
           }
         } ?>
       <!--<div class="d-flex justify-content-end mx-5" style="font-size: 1.2em;">

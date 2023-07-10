@@ -33,12 +33,7 @@
     <main>
         <h1 class="m-4 mb-4 text-center">Pesquisar Receitas</h1>
 
-        <form class="container m-auto form-control p-3" action="../Receitas/pesquisa_receita.php" method="POST">
-            <label for="nomeReceita">Nome da Receita:</label> <br>
-            <input class="mb-3" type="text" id="nomeReceita" name="nomeReceita">
-            <button type="submit" class="btn">Pesquisar</button>
-        </form>
-
+        
         <?php
             include('../Conectar/conectar.php');
 
@@ -48,6 +43,12 @@
                 $result = mysqli_query($conn, $sql_pesquisa_ureceita);
             }
         ?>
+        <form class="container m-auto form-control p-3" action="../Receitas/pesquisa_receita.php" method="POST">
+            <label for="nomeReceita">Nome da Receita:</label> <br>
+            <input class="mb-3" type="text" id="nomeReceita" name="nomeReceita">
+            <button type="submit" class="btn">Pesquisar</button>
+        </form>
+
         <?php
         if (isset($result) && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {

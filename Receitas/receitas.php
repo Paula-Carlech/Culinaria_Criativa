@@ -36,7 +36,7 @@
     <main>
       <h1 class="m-4 mb-5 text-center">Principais Receitas</h1>
 
-      <form action="./Receitas/pesquisa_receita.php" method="post">
+      <form action="../Receitas/pesquisa_receita.php" method="post">
         <div class="input-group m-4 mb-5 m-auto" style="width: 400px;">
             <input type="text" class="form-control" name="termoPesquisa" placeholder=" Pesquisar receita, ingrediente ou relacionado" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
