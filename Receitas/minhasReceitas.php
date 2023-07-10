@@ -44,12 +44,6 @@
           Adicionar Receita
         </a>
       </div>
-      <div class="d-flex justify-content-end mx-5" style="font-size: 1.2em;">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 link_add d-flex align-items-center" href="./excluirReceita.php">
-          <i class="bi bi-file-plus-fill" style="font-size: 1.5em;"></i>
-          Excluir Receita
-        </a>
-      </div>
       <?php
         $id_user = $_SESSION['id'];
         $sql_all_u_rec = "SELECT * FROM cc_receitas WHERE id_Coz_Receita = $id_user";
@@ -79,7 +73,10 @@
                       Bata todos os ingredientes no liquidificador. Depois coloque a metade da massa em uma forma untada e coloque o recheio. Depois coloque o resto da massa. Leve para assar até ficar dourado. Recheio a gosto (ex frango, sardinha, etc).</p>
                   </div>
                   <div class="modal-footer">
+                    <form action="alterarReceita.php" method="post">
+                    <input type="hidden" name="id_receita_alterar" value ="<?php echo $id_receita?>">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Alterar</button>
+                    </form>                  
                     <form action="excluirReceita.php" method="POST">
                       <input type="hidden" name="id_receita_excluir" value="<?php echo $id_receita; ?>">
                       <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Excluir</button>
@@ -90,7 +87,7 @@
               </div>
             </div>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<?php echo $id_receita; ?>">
-              Abrir Modal
+              <?php echo $linha['Nome_Receita']; ?>
             </button>
 
             <?php

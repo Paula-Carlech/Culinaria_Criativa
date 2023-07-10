@@ -1,4 +1,5 @@
 <?php
+include('../Conectar/conectar.php');
 // Verifica se foi enviado o ID da receita
 if (isset($_POST['id_receita_excluir'])) {
   $id_receita_excluir = $_POST['id_receita_excluir'];
@@ -10,7 +11,7 @@ if (isset($_POST['id_receita_excluir'])) {
   $result_excluir_receita = mysqli_query($conn, $sql_excluir_receita);
 
   // Execute a query para excluir os ingredientes relacionados a essa receita
-  $sql_excluir_ingredientes = "DELETE FROM cc_ingredientes WHERE id_Receitas = $id_receita_excluir";
+  $sql_excluir_ingredientes = "DELETE FROM cc_ingredientes WHERE id_Receita = $id_receita_excluir";
   $result_excluir_ingredientes = mysqli_query($conn, $sql_excluir_ingredientes);
 
   // Verifique se a exclusão foi bem-sucedida
