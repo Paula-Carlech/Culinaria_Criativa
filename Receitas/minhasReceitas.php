@@ -79,6 +79,11 @@
                       Bata todos os ingredientes no liquidificador. Depois coloque a metade da massa em uma forma untada e coloque o recheio. Depois coloque o resto da massa. Leve para assar até ficar dourado. Recheio a gosto (ex frango, sardinha, etc).</p>
                   </div>
                   <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Alterar</button>
+                    <form action="excluirReceita.php" method="POST">
+                      <input type="hidden" name="id_receita_excluir" value="<?php echo $id_receita; ?>">
+                      <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Excluir</button>
+                    </form>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                   </div>
                 </div>
