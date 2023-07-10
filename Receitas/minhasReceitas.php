@@ -1,7 +1,7 @@
 <?php 
-  include ('../var/func_ereceita.php');
   include ('../Conectar/conectar.php');
-  include ('../var/ingredientesPesq.php');
+  include ('../funcoes/ingredientesPesq.php');
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,34 +51,40 @@
         </a>
       </div>
       <?php
-      if(mysqli_num_rows($result_u_rec)>0){
-        while($linha = mysqli_fetch_assoc()){?>
-          <div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Torta Salgada</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body m-auto text-justify ">
-                  <img class="rounded img-modal w-100" src="assets/images/foto-salgada.png" alt="Foto da receita.">
-                  <h3>Ingredientes</h3>
-                  <p class="texto">
-                    <?php
-                      IQU(14);
-                    ?>  
-                  </p>
-                    <h3>Modo de Preparo</h3>
-                  <p class="texto">
-                    Bata todos os ingredientes no liquidificador. Depois coloque a metade da massa em uma forma untada e coloque o recheio. Depois coloque o resto da massa. Leve para assar até ficar dourado. Recheio a gosto (ex frango, sardinha, etc).</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        $id_user = $_SESSION['id'];
+        $sql_all_u_rec = "SELECT * FROM cc_receitas WHERE id_Coz_Receita = $id_user";
+        $result_select_u_rec = mysqli_query($conn,$sql_all_u_rec);
+        $linha = mysqli_fetch_assoc($result_select_u_rec);
+        if(mysqli_num_rows($result_select_u_rec)>0){
+          while($linha = mysqli_fetch_assoc($result_select_u_rec)){
+            echo'<div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">' . $linha['Nome_Receita'].'</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body m-auto text-justify ">
+                    <img class="rounded img-modal w-100" src="assets/images/foto-salgada.png" alt="Foto da receita.">
+                    <h3>Ingredientes</h3>
+                    <p class="texto">
+                      <?php
+                        $id_receitas = '. $linha['id_Receitas'] ;
+                        echo 'IQU($id_receitas);
+                      ?>  
+                    </p>
+                      <h3>Modo de Preparo</h3>
+                    <p class="texto">
+                      Bata todos os ingredientes no liquidificador. Depois coloque a metade da massa em uma forma untada e coloque o recheio. Depois coloque o resto da massa. Leve para assar até ficar dourado. Recheio a gosto (ex frango, sardinha, etc).</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        <?php }} ?>
+            </div>';
+          }
+        } ?>
       <!--<div class="d-flex justify-content-end mx-5" style="font-size: 1.2em;">
         <a class="link-offset-2 link-underline link-underline-opacity-0 link_add d-flex align-items-center" href="./alterarReceita.php">
           <i class="bi bi-file-plus-fill" style="font-size: 1.5em;"></i>

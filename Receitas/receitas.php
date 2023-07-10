@@ -1,5 +1,5 @@
 <?php
-  include('../var/funcoes.php');      
+  include('../funcoes/funcoes.php');      
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

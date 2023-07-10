@@ -1,9 +1,9 @@
 <?php
 function IQU ($idReceitaIQU){
-    $id = $idReceitaIQU;
+    $id_receita = $idReceitaIQU;
     include('../Conectar/conectar.php');
     // Realizar a pesquisa em banco de dados para obter os ingredientes
-    $sql_pesquisa_ingredientes = "SELECT Q_Ingrediente, Uni_Ingrediente, Nome_Ingrediente FROM cc_ingredientes where Id_Receita = '$id'";
+    $sql_pesquisa_ingredientes = "SELECT Q_Ingrediente, Uni_Ingrediente, Nome_Ingrediente FROM cc_ingredientes where Id_Receita = '$id_receita'";
     $resultado = mysqli_query($conn, $sql_pesquisa_ingredientes);
     // Vetores para armazenar os ingredientes, quantidades e unidades
     //$ingredientes = array();

@@ -40,7 +40,7 @@
        <?php 
           session_start();
           include('../Conectar/conectar.php');
-          include('../var/funcoes.php');
+          include('../funcoes/funcoes.php');
           $id = $_SESSION['id'];
           //Busca as informações do usuário no banco de dados e armazenas em variáveis:
             $sql = "SELECT * FROM cc_receitas WHERE id_Coz_Receita = $id";
