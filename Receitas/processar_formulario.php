@@ -18,9 +18,10 @@
         $usuario_pri_nome = $_SESSION['pnome'];
         $usuario_ult_nome = $_SESSION['unome'];
         $nomeCompleto = $usuario_pri_nome ;//. " " . $usuario_ult_nome ;
+        $descricao = $_POST['descricao'];
 
         // Inserir na tabela
-        $sql_processamento_receita = "INSERT INTO cc_receitas (Nome_Receita, Coz_Receita, id_Coz_Receita) VALUES ( '$nomeReceita', '$nomeCompleto' , $usuario_id )";
+        $sql_processamento_receita = "INSERT INTO cc_receitas (Nome_Receita, Coz_Receita, id_Coz_Receita, Descricao_Receita	) VALUES ( '$nomeReceita', '$nomeCompleto' , $usuario_id, '$descricao' )";
         $resultado_proc_rec = mysqli_query($conn, $sql_processamento_receita);
         
         

@@ -18,6 +18,7 @@ if (isset($_POST['id_receita_excluir'])) {
   if ($result_excluir_receita && $result_excluir_ingredientes) {
     echo '<script>alert("Receita excluída com sucesso!");</script>';
     header('Location ../Receitas/minhasReceitas.php');
+    exit;
   } else {
     // A exclusão falhou
     // Você pode retornar uma resposta para o JavaScript indicando o erro

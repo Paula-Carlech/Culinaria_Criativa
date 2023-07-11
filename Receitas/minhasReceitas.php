@@ -70,12 +70,12 @@
                     </p>
                       <h3>Modo de Preparo</h3>
                     <p class="texto">
-                      Bata todos os ingredientes no liquidificador. Depois coloque a metade da massa em uma forma untada e coloque o recheio. Depois coloque o resto da massa. Leve para assar até ficar dourado. Recheio a gosto (ex frango, sardinha, etc).</p>
+                      <?php echo $linha['Descricao_Receita']?></p>
                   </div>
                   <div class="modal-footer">
                     <form action="alterarReceita.php" method="post">
                     <input type="hidden" name="id_receita_alterar" value ="<?php echo $id_receita?>">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Alterar</button>
+                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Alterar</button>
                     </form>                  
                     <form action="excluirReceita.php" method="POST">
                       <input type="hidden" name="id_receita_excluir" value="<?php echo $id_receita; ?>">

@@ -2,13 +2,21 @@
     include('../Conectar/conectar.php');
     $id_Receita = $_POST['id_receita_alterar'];
     
-    $sql_all_sele_rec = "SELECT id_Receitas, Nome_Receita FROM cc_receitas WHERE id_Receita = $id_Receita";
+    $sql_all_sele_rec = "SELECT * FROM cc_receitas WHERE id_Receitas = $id_Receita";
     $result_all_sele_rec = mysqli_query($conn,$sql_all_sele_rec);
+    $receita = mysqli_fetch_assoc($result_all_sele_rec);
 
     $sql_all_sele_ing = "SELECT * FROM cc_ingredientes WHERE id_Receita = $id_Receita";
     $result_all_sele_ing = mysqli_query($conn,$sql_all_sele_ing);
-
-    
+    $ingredientes = array();
+    $quantidades = array();
+    $unidades = array();
+    while ($IQU = mysqli_fetch_assoc($result_all_sele_ing)) {
+        $id_ingredientes[] = $IQU['id_ingrediente_cont'];
+        $ingredientes[] = $IQU['Nome_Ingrediente'];
+        $quantidades[] = $IQU['Q_Ingrediente'];
+        $unidades[] = $IQU['Uni_Ingrediente'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,6 +49,44 @@
     </header>
 
     <main>
+    <form method="post" action="processa_alteraReceita.php">
+        <!-- Campo para alterar o nome da receita -->
+        <div>
+            <label for="nomeReceita">Nome da Receita:</label>
+            <input type="text" id="nomeReceita" name="nomeReceita" value="<?php echo $receita['Nome_Receita']; ?>">
+        </div>
+        <div>
+            <label for="ingredientes">Ingredientes:</label>
+            <?php foreach ($ingredientes as $index => $ingrediente) { ?>
+                <div class="row">
+                    <div class="col">
+                        <label for="quantidade-<?php echo $index; ?>">Quantidade:</label>
+                        <input type="text" id="quantidade-<?php echo $index; ?>" name="quantidades<?php echo $index; ?>" value="<?php echo $quantidades[$index]; ?>">
+                    </div>
+                    <div class="col">
+                        <label for="unidade-<?php echo $index; ?>">Unidade:</label>
+                        <input type="text" id="unidade-<?php echo $index; ?>" name="unidades<?php echo $index; ?>" value="<?php echo $unidades[$index]; ?>">
+                    </div>
+                    <div class="col">
+                        <label for="ingrediente-<?php echo $index; ?>">Ingrediente:</label>
+                        <input type="text" id="ingrediente-<?php echo $index; ?>" name="ingredientes<?php echo $index ;?>" value="<?php echo $ingrediente; ?>">
+                    </div>
+                    <input type="hidden" name="idingredientes<?php echo $index; ?>" value="<?php echo $id_ingredientes[$index]; ?>">
+                </div>
+            <?php } ?>
+        </div>
+        <!-- Campo para alterar a descrição da receita -->
+        <div>
+            <label for="descricaoReceita">Descrição:</label>
+            <textarea id="descricaoReceita" name="descricaoReceita"><?php echo $receita['Descricao_Receita']; ?></textarea>
+        </div>
+        <!-- Campo para alterar outros detalhes da receita -->
+        <!-- ... -->
+
+        <input type="hidden" name="idReceita" value="<?php echo $id_Receita; ?>">
+        <input type="hidden" name="index" value="<?php echo $index; ?>">
+        <button type="submit">Salvar Alterações</button>
+    </form>
         
     </main>
 
