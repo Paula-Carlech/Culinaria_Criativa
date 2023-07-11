@@ -1,5 +1,5 @@
 <?php
-  include('../funcoes/ingredientesPesq.php');      
+  include('../funcoes/pesquisas.php');      
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -84,7 +84,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $row_pesquisa_receita['Nome_Receita'];?></h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel"> </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body m-auto text-justify ">
