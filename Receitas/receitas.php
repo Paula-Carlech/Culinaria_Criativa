@@ -1,5 +1,5 @@
 <?php
-  include('../funcoes/pesquisas.php');      
+  include('../funcoes/funcoespesquisas.php');      
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -53,7 +53,7 @@
             <div class="card">
               <img src="assets/images/foto-salgada.png" class="card-img-top" alt="Foto da receita.">
               <div class="card-body">
-                <h5 class="card-title text-center">Torta Salgada</h5>
+                <h5 class="card-title text-center"><?php imprimeNomereceita(17)?></h5>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel"> </h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php imprimeNomereceita(17);?></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body m-auto text-justify ">

@@ -9,6 +9,15 @@ function imprimeDescricao($idReceitaIQU){
     echo $descricao;
 }
 
+function imprimeNomereceita($idReceitaIQU){
+    $id_receita = $idReceitaIQU;
+    include('../Conectar/conectar.php');
+    $sql_nome_receita =" SELECT Nome_Receita FROM cc_receitas WHERE id_Receitas = $id_receita";
+    $resultadonome_receita=mysqli_query($conn,$sql_nome_receita);
+    $row_nome_receita = mysqli_fetch_array($resultadonome_receita);
+    $nome = $row_nome_receita['Nome_Receita'];
+    echo $nome;
+}
 function IQU ($idReceitaIQU){
     $id_receita = $idReceitaIQU;
     include('../Conectar/conectar.php');
