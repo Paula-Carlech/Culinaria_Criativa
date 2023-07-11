@@ -34,11 +34,11 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link" href="Autenticacao/autenticar_receita.php">Receitas</a>
-                  <a class="nav-link" href="Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
-                  <a class="nav-link" href="sobre.html">Sobre</a>
-                  <a class="nav-link" href="Conta/conta.html">Conta</a>
-                  <a class="nav-link" href="/Conectar/logout.php">Logout</a>
+                  <a class="nav-link" href="../Autenticacao/autenticar_receita.php">Receitas</a>
+                  <a class="nav-link" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
+                  <a class="nav-link" href="../sobre.html">Sobre</a>
+                  <a class="nav-link" href="../Conta/conta.html">Conta</a>
+                  <a class="nav-link" href="../Conectar/logout.php">Logout</a>
 
                 </div>
               </div>

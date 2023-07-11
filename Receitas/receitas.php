@@ -8,9 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receitas</title>
-    <link rel="shortcut icon" href="../assets/images/LOGO.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/LOGO.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 <header>
@@ -23,10 +23,10 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link active" aria-current="page" href="Autenticacao/autenticar_receita.php">Receitas</a>
-                  <a class="nav-link" href="Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
-                  <a class="nav-link" href="sobre.html">Sobre</a>
-                  <a class="nav-link" href="Conta/conta.html">Conta</a>
-                  <a class="nav-link" href="/Conectar/logout.php">Logout</a>
+                  <a class="nav-link" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
+                  <a class="nav-link" href="../sobre.html">Sobre</a>
+                  <a class="nav-link" href="../Conta/conta.html">Conta</a>
+                  <a class="nav-link" href="../Conectar/logout.php">Logout</a>
 
                 </div>
               </div>
@@ -61,7 +61,7 @@
 
           <div class="col btn btn_sem_cor" data-bs-toggle="modal" data-bs-target="#modal-2">
             <div class="card">
-              <img src="assets/images/Foto-doce.png" class="card-img-top" alt="Foto da receita.">
+              <img src="../assets/images/Foto-doce.png" class="card-img-top" alt="Foto da receita.">
               <div class="card-body">
                 <h5 class="card-title text-center">Tiramissú</h5>
               </div>
@@ -70,7 +70,7 @@
 
           <div class="col btn btn_sem_cor" data-bs-toggle="modal" data-bs-target="#modal-3">
             <div class="card">
-              <img src="assets/images/bebida.png" class="card-img-top" alt="Foto da receita.">
+              <img src="../assets/images/bebida.png" class="card-img-top" alt="Foto da receita.">
               <div class="card-body">
                 <h5 class="card-title text-center">Drink de morango com tequila</h5>
               </div>
@@ -119,7 +119,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body m-auto text-justify ">
-            <img class="rounded img-modal w-100" src="assets/images/Foto-doce.png" alt="Foto da receita.">
+            <img class="rounded img-modal w-100" src="../assets/images/Foto-doce.png" alt="Foto da receita.">
             <h3>Ingredientes</h3>
             <p class="texto">
               - 400 g de queijo mascarpone <br>
@@ -159,7 +159,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body m-auto text-justify ">
-            <img class="rounded img-modal w-100" src="assets/images/bebida.png" alt="Foto da receita.">
+            <img class="rounded img-modal w-100" src="../assets/images/bebida.png" alt="Foto da receita.">
             <h3>Ingredientes</h3>
             <p class="texto">
               - 5 morangos <br>
