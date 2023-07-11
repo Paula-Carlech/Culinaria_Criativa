@@ -52,7 +52,7 @@
         if(mysqli_num_rows($result_select_u_rec)>0){
           while($linha = mysqli_fetch_assoc($result_select_u_rec)){
             $id_receita = $linha['id_Receitas'];
-            $nome_receita = imprimeNomeReceitapeloID($id_receita);
+            $nome_receita = obterNomeReceitapeloID($id_receita);
             ?>
             <div class="modal fade" id="modal-<?php echo $id_receita; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
