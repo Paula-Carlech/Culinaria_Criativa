@@ -94,46 +94,6 @@
             <?php
           }
         } ?>
-      <!--<div class="d-flex justify-content-end mx-5" style="font-size: 1.2em;">
-        <a class="link-offset-2 link-underline link-underline-opacity-0 link_add d-flex align-items-center" href="./alterarReceita.php">
-          <i class="bi bi-file-plus-fill" style="font-size: 1.5em;"></i>
-          Alterar Receita
-        </a>
-      </div>
-       <div class="row row-cols-1 row-cols-md-3 m-3 row-gap-3">
-        
-        <!-- <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
-          <div class="col">
-            <div class="card">
-              <img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">
-              <div class="card-body">
-                <h5 class="card-title text-center">Nome da receita</h5>
-              </div>
-            </div>
-          </div>
-        </a>
-
-       <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
-          <div class="col">
-            <div class="card">
-              <img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">
-              <div class="card-body">
-                <h5 class="card-title text-center">Nome da receita</h5>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
-          <div class="col">
-            <div class="card">
-              <img src="../assets/receita.jpg" class="card-img-top" alt="Foto da receita.">
-              <div class="card-body">
-                <h5 class="card-title text-center">Nome da receita</h5>
-              </div>
-            </div>
-          </div>
-        </a> -->
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
