@@ -1,5 +1,7 @@
 <?php
-  include('../funcoes/funcoespesquisas.php');      
+  include('../funcoes/funcoespesquisas.php');
+  $nome_receita_obtida = obterNomeReceitapeloID(17);
+  echo $nome_receita_obtida;    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,9 +53,9 @@
 
           <div class="col btn btn_sem_cor" data-bs-toggle="modal" data-bs-target="#modal-1">
             <div class="card">
-              <img src="assets/images/foto-salgada.png" class="card-img-top" alt="Foto da receita.">
+              <img src="../assets/images/foto-salgada.png" class="card-img-top" alt="Foto da receita.">
               <div class="card-body">
-                <h5 class="card-title text-center"><?php imprimeNomereceita(17)?></h5>
+                <h5 class="card-title text-center"><?php echo $nome_receita_obtida;?></h5>
               </div>
             </div>
           </div>
@@ -84,7 +86,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php imprimeNomereceita(17);?></h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel"> <?php echo $nome_receita_obtida;?></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body m-auto text-justify ">
@@ -185,7 +187,6 @@
       //include 'Receitas/exibirReceita.php'; 
     ?>
 
-    <script 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>

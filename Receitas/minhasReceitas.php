@@ -1,6 +1,6 @@
 <?php 
   include ('../Conectar/conectar.php');
-  include ('../funcoes/ingredientesPesq.php');
+  include ('../funcoes/funcoespesquisas.php');
   session_start();
 ?>
 <!DOCTYPE html>
@@ -52,12 +52,13 @@
         if(mysqli_num_rows($result_select_u_rec)>0){
           while($linha = mysqli_fetch_assoc($result_select_u_rec)){
             $id_receita = $linha['id_Receitas'];
+            $nome_receita = imprimeNomeReceitapeloID($id_receita);
             ?>
             <div class="modal fade" id="modal-<?php echo $id_receita; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $linha['Nome_Receita']?></h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"><?php $nome_receita;?></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body m-auto text-justify ">
@@ -70,7 +71,7 @@
                     </p>
                       <h3>Modo de Preparo</h3>
                     <p class="texto">
-                      <?php echo $linha['Descricao_Receita']?></p>
+                      <?php imprimeDescricao($id_receita);?></p>
                   </div>
                   <div class="modal-footer">
                     <form action="alterarReceita.php" method="post">
