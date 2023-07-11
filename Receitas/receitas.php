@@ -1,5 +1,5 @@
 <?php
-  include('../funcoes/funcoes.php');      
+  include('../funcoes/ingredientesPesq.php');      
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -84,20 +84,23 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Torta Salgada</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $row_pesquisa_receita['Nome_Receita'];?></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body m-auto text-justify ">
-            <img class="rounded img-modal w-100" src="assets/images/foto-salgada.png" alt="Foto da receita.">
+            <img class="rounded img-modal w-100" src="../assets/images/foto-salgada.png" alt="Foto da receita.">
             <h3>Ingredientes</h3>
             <p class="texto">
               <?php
-                IQU(14);
+                IQU(17);
               ?>  
             </p>
               <h3>Modo de Preparo</h3>
             <p class="texto">
-              Bata todos os ingredientes no liquidificador. Depois coloque a metade da massa em uma forma untada e coloque o recheio. Depois coloque o resto da massa. Leve para assar até ficar dourado. Recheio a gosto (ex frango, sardinha, etc).</p>
+              <?php
+                imprimeDescricao(17);
+              ?>
+            </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -187,8 +190,7 @@
     ?>
 
     <script 
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>
 </html>

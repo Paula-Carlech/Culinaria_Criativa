@@ -1,9 +1,19 @@
 <?php
+function imprimeDescricao($idReceitaIQU){
+    $id_receita = $idReceitaIQU;
+    include('../Conectar/conectar.php');
+    $sql_pesquisa_receita = "SELECT * FROM cc_receitas WHERE Id_Receitas = '$id_receita'";
+    $resultado_pesquisa_receita = mysqli_query($conn,$sql_pesquisa_receita);
+    $row_pesquisa_receita = mysqli_fetch_assoc($resultado_pesquisa_receita);
+    $descricao = $row_pesquisa_receita['Descricao_Receita'];
+    echo $descricao;
+}
+
 function IQU ($idReceitaIQU){
     $id_receita = $idReceitaIQU;
     include('../Conectar/conectar.php');
     // Realizar a pesquisa em banco de dados para obter os ingredientes
-    $sql_pesquisa_ingredientes = "SELECT Q_Ingrediente, Uni_Ingrediente, Nome_Ingrediente FROM cc_ingredientes where Id_Receita = '$id_receita'";
+    $sql_pesquisa_ingredientes = "SELECT Q_Ingrediente, Uni_Ingrediente, Nome_Ingrediente FROM cc_ingredientes WHERE Id_Receita = '$id_receita'";
     $resultado = mysqli_query($conn, $sql_pesquisa_ingredientes);
     // Vetores para armazenar os ingredientes, quantidades e unidades
     //$ingredientes = array();

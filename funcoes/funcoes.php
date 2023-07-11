@@ -1,5 +1,6 @@
 <?php
 include('ingredientesPesq.php');
+
 function exibirModal($titulo, $id_Receita) {
     
     // Cabeçalho do modal
