@@ -2,7 +2,7 @@
   include('../funcoes/funcoespesquisas.php');
   include('../funcoes/pesquisa_bd.php');
   // Verifica se a pesquisa foi realizada em receitas.php
-    if (isset($_POST['termoPesquisa'])) {
+    //if (isset($_POST['termoPesquisa'])) {
         $termoPesquisa = $_POST['termoPesquisa'];
         // Realize a pesquisa no banco de dados com base no termo de pesquisa
         // Armazene os resultados em uma variável
@@ -10,7 +10,7 @@
         $sql_nome_pesquisa = "SELECT * FROM cc_receitas WHERE Nome_Receita LIKE '%$termoPesquisa%'";
         $result_nome_pesquisa = mysqli_query($conn,$sql_nome_pesquisa);
         $linhasresultadosPesquisa = mysqli_fetch_assoc($result_nome_pesquisa);
-    }
+    //}
 
 ?>
 
@@ -56,14 +56,17 @@
         </form>
         <?php if ($linhasresultadosPesquisa && is_array($linhasresultadosPesquisa)){?>
             <?php $numero_result = contarReceitas($termoPesquisa);?>
-            <?php for ($i = 0; $i < $numero_result; $i++){
-                echo "nome = ";
-                imprimeNomereceita($linhasresultadosPesquisa['Nome_Receita']); // imprime o nome da receita
-                echo "\niqu = ";
-                IQU($linhasresultadosPesquisa['id_Receitas']); //imprime as quantidades, ingredientes e unidades da receita em questao ja formatadas
-                echo "\ndescricao = ";
-                imprimeDescricao($linhasresultadosPesquisa['id_Receitas']); //imprime a descriçao da receita se ela tiver?> 
-                <div class="modal fade" id="modal-<?php echo $i; //numero do modal?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <?php for ($i = 0; $i < $numero_result; $i++){?> 
+                <div class="col btn btn_sem_cor" data-bs-toggle="modal" data-bs-target="#modal-<?php echo $linhasresultadosPesquisa['id_Receitas'];?>">
+                <div class="card">
+                    <img src="../assets/images/foto-salgada.png" class="card-img-top" alt="Foto da receita.">
+                    <div class="card-body">
+                    <h5 class="card-title text-center"><?php imprimeNomereceita($linhasresultadosPesquisa['Nome_Receita'])?></h5>
+                    </div>
+                </div>
+                </div>
+
+                <div class="modal fade" id="modal-<?php echo $linhasresultadosPesquisa['id_Receitas']; //numero do modal?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">

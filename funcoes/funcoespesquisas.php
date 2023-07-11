@@ -10,7 +10,8 @@ function imprimeDescricao($idReceitaIQU){
 }
 function contarReceitas($nome_ReceitaPesq) {
     include('../Conectar/conectar.php');
-    $sql_contar_receitas = "SELECT COUNT(*) AS total FROM cc_receitas WHERE Nome_Receita LIKE '%$nome_ReceitaPesq%'";
+    $nome_pesquisar = $nome_ReceitaPesq;
+    $sql_contar_receitas = "SELECT COUNT(*) AS total FROM cc_receitas WHERE Nome_Receita LIKE '%$nome_pesquisar%'";
     $result_contar_receitas = mysqli_query($conn, $sql_contar_receitas);
     $row_contar_receitas = mysqli_fetch_assoc($result_contar_receitas);
     $numero_linhas = $row_contar_receitas['total'];
