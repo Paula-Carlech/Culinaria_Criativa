@@ -1,3 +1,19 @@
+<?php
+  include('../funcoes/funcoespesquisas.php');
+  include('../funcoes/pesquisa_bd.php');
+  // Verifica se a pesquisa foi realizada em receitas.php
+    if (isset($_POST['termoPesquisa'])) {
+        $termoPesquisa = $_POST['termoPesquisa'];
+        // Realize a pesquisa no banco de dados com base no termo de pesquisa
+        // Armazene os resultados em uma variável
+        include('../Conectar/conectar.php');
+        $sql_nome_pesquisa = "SELECT * FROM cc_receitas WHERE Nome_Receita LIKE '%$termoPesquisa%'";
+        $result_nome_pesquisa = mysqli_query($conn,$sql_nome_pesquisa);
+        $linhasresultadosPesquisa = mysqli_fetch_assoc($result_nome_pesquisa);
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,38 +49,55 @@
     <main>
         <h1 class="m-4 mb-4 text-center">Pesquisar Receitas</h1>
 
-        
-        <?php
-            include('../Conectar/conectar.php');
-
-            if (isset($_POST['nomeReceita'])) {
-                $nomeReceita = $_POST['nomeReceita'];
-                $sql_pesquisa_ureceita = "SELECT * FROM cc_receitas WHERE Nome_Receita LIKE '%$nomeReceita%'";
-                $result = mysqli_query($conn, $sql_pesquisa_ureceita);
-            }
-        ?>
         <form class="container m-auto form-control p-3" action="../Receitas/pesquisa_receita.php" method="POST">
             <label for="nomeReceita">Nome da Receita:</label> <br>
-            <input class="mb-3" type="text" id="nomeReceita" name="nomeReceita">
+            <input class="mb-3" type="text" id="nomeReceita" name="termoPesquisa">
             <button type="submit" class="btn">Pesquisar</button>
         </form>
+        <?php if ($linhasresultadosPesquisa && is_array($linhasresultadosPesquisa)){?>
+            <?php $numero_result = contarReceitas($termoPesquisa);?>
+            <?php for ($i = 0; $i < $numero_result; $i++){
+                echo "nome = ";
+                imprimeNomereceita($linhasresultadosPesquisa['Nome_Receita']); // imprime o nome da receita
+                echo "\niqu = ";
+                IQU($linhasresultadosPesquisa['id_Receitas']); //imprime as quantidades, ingredientes e unidades da receita em questao ja formatadas
+                echo "\ndescricao = ";
+                imprimeDescricao($linhasresultadosPesquisa['id_Receitas']); //imprime a descriçao da receita se ela tiver?> 
+                <div class="modal fade" id="modal-<?php echo $i; //numero do modal?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php imprimeNomereceita($linhasresultadosPesquisa['Nome_Receita']); ?></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body m-auto text-justify ">
+                                <img class="rounded img-modal w-100" src="../assets/images/foto-salgada.png" alt="Foto da receita.">
+                                <h3>Ingredientes</h3>
+                                <p class="texto">
+                                <?php
+                                    IQU($linhasresultadosPesquisa['id_Receitas']);
+                                ?>  
+                                </p>
+                                <h3>Modo de Preparo</h3>
+                                <p class="texto">
+                                <?php
+                                    imprimeDescricao($linhasresultadosPesquisa['id_Receitas']);
+                                ?>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php }?>    
+        <?php }?>       
 
-        <?php
-        if (isset($result) && mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="container my-4">';
-                echo '<h2>' . $row['Nome_Receita'] . '</h2>';
-                echo '<p>' . $row['Coz_Receita'] . '</p>';
-                echo '</div>';
-            }
-        } elseif (isset($_POST['nomeReceita'])) {
-            echo '<div class="container my-4">';
-            echo '<p>Nenhuma receita encontrada com o nome "' . $nomeReceita . '".</p>';
-            echo '</div>';
-        }
-        ?>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
 </body>
 </html>

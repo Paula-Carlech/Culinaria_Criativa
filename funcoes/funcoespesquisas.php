@@ -8,16 +8,39 @@ function imprimeDescricao($idReceitaIQU){
     $descricao = $row_pesquisa_receita['Descricao_Receita'];
     echo $descricao;
 }
+function contarReceitas($nome_ReceitaPesq) {
+    include('../Conectar/conectar.php');
+    $sql_contar_receitas = "SELECT COUNT(*) AS total FROM cc_receitas WHERE Nome_Receita LIKE '%$nome_ReceitaPesq%'";
+    $result_contar_receitas = mysqli_query($conn, $sql_contar_receitas);
+    $row_contar_receitas = mysqli_fetch_assoc($result_contar_receitas);
+    $numero_linhas = $row_contar_receitas['total'];
+    return $numero_linhas;
 
-function imprimeNomereceita($idReceitaIQU){
+}
+
+function imprimeNomereceita($nomeReceita) {
+        echo $nomeReceita;
+    }
+
+function obterNomeReceitapeloID($id_Receita_para_nome) {
+    include('../Conectar/conectar.php');
+    $id_receita = $id_Receita_para_nome;
+    $sql_buscar_id_pelo_nome = "SELECT Nome_Receita FROM cc_receitas WHERE id_Receitas = $id_receita";
+    $resultadoBuscaIdPeloNome = mysqli_query($conn, $sql_buscar_id_pelo_nome);
+    $linha = mysqli_fetch_assoc($resultadoBuscaIdPeloNome);
+    $nome_receita = $linha['Nome_Receita'];
+    return $nome_receita;
+}
+    
+/*function imprimeNomereceita($idReceitaIQU){
     $id_receita = $idReceitaIQU;
     include('../Conectar/conectar.php');
-    $sql_nome_receita =" SELECT Nome_Receita FROM cc_receitas WHERE id_Receitas = $id_receita";
+    $sql_nome_receita = "SELECT Nome_Receita FROM cc_receitas WHERE id_Receitas = $id_receita";
     $resultadonome_receita=mysqli_query($conn,$sql_nome_receita);
     $row_nome_receita = mysqli_fetch_array($resultadonome_receita);
     $nome = $row_nome_receita['Nome_Receita'];
     echo $nome;
-}
+}*/
 function IQU ($idReceitaIQU){
     $id_receita = $idReceitaIQU;
     include('../Conectar/conectar.php');
