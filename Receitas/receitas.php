@@ -108,10 +108,6 @@
         </div>
       </div>
     </div>
-
-    <?php
-      exibirModal('Cuzcuz',13);
-    ?>
     
     <!-- Modal-2 -->
     <div class="modal fade" id="modal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
