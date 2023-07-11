@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
+<header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="../index.php"><img class="logo" src="../assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
@@ -21,11 +21,11 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="../Autenticacao/autenticar_receita.php">Receitas</a>
-                  <a class="nav-link" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
+                  <a class="nav-link active" aria-current="page" href="Autenticacao/autenticar_receita.php">Receitas</a>
+                  <a class="nav-link" href="Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
                   <a class="nav-link" href="sobre.html">Sobre</a>
-                  <a class="nav-link" href="../Conta/conta.html">Conta</a>
-                  <a class="nav-link" href="../Conectar/logout.php">Logout</a>
+                  <a class="nav-link" href="Conta/conta.html">Conta</a>
+                  <a class="nav-link" href="/Conectar/logout.php">Logout</a>
 
                 </div>
               </div>
@@ -185,7 +185,6 @@
       //include 'Receitas/exibirReceita.php'; 
     ?>
 
-    <script 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </body>

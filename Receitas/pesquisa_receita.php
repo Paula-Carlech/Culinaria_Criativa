@@ -9,23 +9,25 @@
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <header>
+<header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img class="logo" src="../assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+              <a class="navbar-brand" href="../index.php"><img class="logo" src="../assets/images/LOGO.png" alt="Logo Culinária Criativa"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="../Autenticacao/autenticar_receita.php">Receitas</a>
-                    <a class="nav-link" href="../Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
-                    <a class="nav-link" href="../sobre.html">Sobre</a>
-                    <a class="nav-link" href="../Conta/conta.html">Conta</a>
-                    <a class="nav-link" href="../Conectar/logout.php">Logout</a>
-                    </div>
+                  <a class="nav-link" href="Autenticacao/autenticar_receita.php">Receitas</a>
+                  <a class="nav-link" href="Autenticacao/autenticar_minhasReceitas.php">Minhas Receitas</a>
+                  <a class="nav-link" href="sobre.html">Sobre</a>
+                  <a class="nav-link" href="Conta/conta.html">Conta</a>
+                  <a class="nav-link" href="/Conectar/logout.php">Logout</a>
+
                 </div>
+              </div>
             </div>
-        </nav>
+          </nav>
     </header>
 
     <main>
