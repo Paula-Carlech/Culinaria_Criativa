@@ -1,7 +1,6 @@
 <?php
   include('../funcoes/funcoespesquisas.php');
   $nome_receita_obtida = obterNomeReceitapeloID(17);
-  echo $nome_receita_obtida;    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
